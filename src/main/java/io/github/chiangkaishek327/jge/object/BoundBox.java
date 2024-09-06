@@ -1,8 +1,5 @@
 package io.github.chiangkaishek327.jge.object;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.collections.FXCollections;

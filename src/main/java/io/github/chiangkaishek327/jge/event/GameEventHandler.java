@@ -8,4 +8,8 @@ public abstract class GameEventHandler<A, E extends GameEvent<A>> {
 
     public abstract void handle(long tick);
 
+    public ObservableList<E> getEvents() {
+        return events;
+    }
+
 }

@@ -1,5 +1,7 @@
 package io.github.chiangkaishek327.jge.event;
 
+import java.util.UUID;
+
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.LongProperty;
@@ -12,11 +14,18 @@ public class Timer {
     protected final LongProperty millPerTick = new SimpleLongProperty(0);
     protected final DoubleProperty tps = new SimpleDoubleProperty(0);
     protected final BooleanProperty running = new SimpleBooleanProperty(false);
+    protected final Thread HandlingThread = new Thread("TimerThread_" + UUID.randomUUID());
+
+    public Timer() {
+
+    }
 
     public LongProperty currentTickProperty() {
         return currentTick;
     }
-
+    public long getCurrentTick(){
+        return currentTick.get();
+    }
     public LongProperty millPerTickProperty() {
         return millPerTick;
     }
@@ -29,4 +38,8 @@ public class Timer {
         return running;
     }
 
+    public Thread getHandlingThread() {
+        return HandlingThread;
+    }
+    
 }
